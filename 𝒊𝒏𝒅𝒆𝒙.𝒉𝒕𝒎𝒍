@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Special Love ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;
+ display:flex;justify-content:center;align-items:center;
+ background:linear-gradient(135deg,#ff416c,#ff4b8b,#ff758c);
+ font-family:Arial,sans-serif;color:white;
+ overflow:hidden;
+}
+.card{
+ width:90%;max-width:380px;
+ padding:35px 22px;text-align:center;
+ background:#ffffff30;
+ border:1px solid #ffffff70;
+ border-radius:25px;
+ backdrop-filter:blur(12px);
+ box-shadow:0 10px 40px #8b003c55;
+}
+.heart{
+ font-size:85px;
+ animation:beat 1s infinite;
+}
+@keyframes beat{
+ 50%{transform:scale(1.25)}
+}
+h1{font-size:30px}
+p{font-size:17px;line-height:1.8}
+button{
+ background:white;color:#ff3867;
+ border:0;border-radius:30px;
+ padding:14px 28px;font-size:17px;
+ font-weight:bold;margin-top:15px;
+}
+#message{margin-top:20px;font-size:18px}
+.fall{
+ position:absolute;top:-30px;
+ animation:fall 6s linear infinite;
+ pointer-events:none;
+}
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(360deg)}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+ <div class="heart">❤️</div>
+ <h1>Someone Special 💗</h1>
+ <p>
+  তুমি হয়তো জানো না,<br>
+  কিন্তু তুমি আমার কাছে অনেক স্পেশাল।<br>
+  তোমার হাসিতেই আমার সুখ। 🥰<br>
+  সারাজীবন এভাবেই পাশে থেকো। ❤️
+ </p>
+ <button onclick="love()">Click Me 💌</button>
+ <div id="message"></div>
+</div>
+
+<script>
+function love(){
+ document.getElementById("message").innerHTML=
+ "❤️ I LOVE YOU SO MUCH! ❤️<br>তুমি আমার হৃদয়ের সবচেয়ে সুন্দর অনুভূতি। 💕";
+}
+for(let i=0;i<20;i++){
+ let h=document.createElement("div");
+ h.className="fall";
+ h.innerHTML="💗";
+ h.style.left=Math.random()*100+"%";
+ h.style.animationDelay=Math.random()*6+"s";
+ h.style.fontSize=(15+Math.random()*25)+"px";
+ document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
